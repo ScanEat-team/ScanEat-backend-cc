@@ -28,8 +28,8 @@ const init = async () => {
     host: "0.0.0.0",
     routes: {
       cors: {
-        origin: ['*'], // Mengizinkan semua origin. Ganti '*' dengan domain tertentu jika diperlukan.
-        credentials: true, // Mengizinkan kredensial seperti cookie
+        origin: ['*'],
+        additionalHeaders: ['X-API-Key'],
       }
     }
   });
