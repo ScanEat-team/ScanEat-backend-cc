@@ -1,0 +1,13 @@
+makanan
+  ├── buah
+  │     ├── nama: "buah"
+  │     ├── description: "Kategori buah"
+  │     └── items
+  │           ├── makanan_1733404562710
+  │           └── ...
+  sayur
+  │     ├── nama: "sayur"
+  │     ├── description: "Kategori sayur"
+  │     └── items
+  │           ├── makanan_1733404562710
+  │           └── ...

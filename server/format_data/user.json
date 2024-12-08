@@ -1,0 +1,51 @@
+{
+    "users": [
+        {
+            "WM2CyB80LN59kvvWaoti": {
+                "user_id": "WM2CyB80LN59kvvWaoti",
+                "firebase_uid": "nxM0pfUgW9Rv3UKjEDCxFVZti8u1",
+                "name": "adit",
+                "email": "adit22@gmail.com",
+                "password": "$2b$05$0P7gjfdJAV94V9.A7fzo0OMeABdyyx0lXbzjAY8TQqFeXCEYfwpge",
+                "sex": "Male",
+                "birthdate": "1990-01-01",
+                "age": 34,
+                "weight": "70.0",
+                "height": "175.0",
+                "bmi": 22.857142857142858,
+                "dietPreference": "Vegan"
+            }
+        },
+        {
+            "rnnkE0AZubIgfwONPQIr": {
+                "user_id": "rnnkE0AZubIgfwONPQIr",
+                "firebase_uid": "bJ5SQEWpCMezqDGFU1P7sztcMp32",
+                "email": "adit2@gmail.com",
+                "password": "$2b$05$wGaQsgM52inOiGHyk4rjf.FJOnveS2R1NdQYtlwMkAmmtjLDXXN3S",
+                "sex": "Male",
+                "birthdate": "1990-01-01",
+                "age": 34,
+                "height": "175.0",
+                "dietPreference": "Vegan",
+                "name": "adit1",
+                "weight": "65",
+                "bmi": 21.224489795918366
+            }
+        },
+        {
+            "vOpMLflkHegh0nwdDkLK": {
+                "user_id": "vOpMLflkHegh0nwdDkLK",
+                "firebase_uid": "p0F48YAYxPgaRBmuFKPWFyiOMQq1",
+                "name": "adit",
+                "email": "adit@gmail.com",
+                "password": "$2b$05$p2zcXHqVUyADsmo5sxKuneDHb0Y3sGTf0CgkswurdeOc0pMH75DuW",
+                "sex": "Male",
+                "birthdate": "1990-01-01",
+                "age": 34,
+                "weight": "70.0",
+                "height": "175.0",
+                "bmi": 22.857142857142858
+            }
+        }
+    ]
+}

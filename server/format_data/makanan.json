@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "message": "Makanan data retrieved successfully.",
+  "data": [
+      {
+          "id": "makanan_1733592569365",
+          "nama": "watermelon",
+          "deskripsi": "Buah segar yang tinggi air dan rendah kalori",
+          "nutrition": {
+              "kalori": 30,
+              "protein": 0.6,
+              "karbohidrat": 8,
+              "vitamin A": "569 IU",
+              "vitamin C": "8.1 mg"
+          },
+          "makanan_picture": "https://storage.googleapis.com/scaneat/makanan/buah/makanan_1733592569365/Kaori-cicak.jpg",
+          "kategori": "buah"
+      }
+  ]
+}
