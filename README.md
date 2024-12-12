@@ -3,7 +3,7 @@
 ---
 
 # Cloud Infrastructure
-<img src="">
+<img src="https://github.com/ScanEat-team/.github/blob/d9e6d90ac66e3c405f243abd1ec926fb9adfd140/assets/Google%20cloud%20Architeture.png">
 
 ---
 
