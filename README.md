@@ -1,4 +1,6 @@
-# ScanEat - Cloud Computing
+# ScanEat - Cloud Computing-
+<img src="https://raw.githubusercontent.com/ScanEat-team/.github/8faa7ee51b00d1f5a86bec4a29b02d659291fb68/assets/Logo.png">
+
 ## Introduction
 
 ScanEat is a web-based app designed to help consumers make the best nutritional choices to meet their personalized dietary needs, especially on high-fat-sugar-salt (HFSS) products by scanning the barcode of the product. Providing customized food recommendations based on macronutrient content and individual preferences, ScanEat enables users to make informed choices about products available at convenience stores.
@@ -7,7 +9,7 @@ ScanEat is a web-based app designed to help consumers make the best nutritional 
 
 ## Table of Contents
 
-- [ScanEat - Cloud Computing](#scaneat---cloud-computing)
+- [ScanEat - Cloud Computing-](#scaneat---cloud-computing-)
   - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
 - [Cloud Infrastructure](#cloud-infrastructure)
@@ -20,13 +22,13 @@ ScanEat is a web-based app designed to help consumers make the best nutritional 
       - [File Structure](#file-structure)
   - [Deploying to Cloud Run](#deploying-to-cloud-run)
   - [Prediction Classes](#prediction-classes)
-- [API Reference (Still Only Reference)](#api-reference-still-only-reference)
+- [API Reference](#api-reference)
   - [Endpoint Routes](#endpoint-routes)
     - [General Endpoints](#general-endpoints)
     - [User Management](#user-management)
     - [Article Management](#article-management)
     - [Other](#other)
-    - [Food Prediction and History](#food-prediction-and-history)
+    - [Food Prediction](#food-prediction)
     - [Food Management](#food-management)
   - [API Documentation](#api-documentation)
   - [Endpoints](#endpoints)
@@ -135,7 +137,7 @@ The API supports classification for upc product realated classes:
 - ![Prediksi Class](Asset/Prediksi.jpg)
 
 ---
-# API Reference (Still Only Reference)
+# API Reference 
 
 ## Endpoint Routes
 
@@ -174,7 +176,7 @@ The API supports classification for upc product realated classes:
 | `/register`                     | POST        | User registration                            |
 | `/forgotPassword`               | POST        | Reset password                               |
 
-### Food Prediction and History
+### Food Prediction 
 
 | Route                           | HTTP Method | Description                                  |
 |---------------------------------|-------------|----------------------------------------------|
