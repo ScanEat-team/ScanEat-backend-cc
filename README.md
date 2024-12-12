@@ -33,10 +33,9 @@ ScanEat is a web-based app designed to help consumers make the best nutritional 
 - [Cloud Team](#cloud-team)
   - [Contributing](#contributing)
   - [UI/UX Design](#uiux-design)
-  - [Deployment Link APK Kiddos](#deployment-link-apk-kiddos)
+  - [Deployment Link Website](#deployment-link-website)
   - [Languages and Tools:](#languages-and-tools)
-    - [](#)
-    - [](#-1)
+- [🔥 Supported By](#-supported-by)
   - [License](#license)
 
 ---
@@ -225,7 +224,7 @@ We welcome contributions to improve this API. To contribute:
 
 - Link Prototype Design : [Prototype](https://www.figma.com/design/j9dcfgEwXPNj7ceYi59o7b/Capstone-Design?node-id=473-282&t=bR4aZisyNGUu5y2v-1)
 
-## Deployment Link APK Kiddos
+## Deployment Link Website
 
 Web ScanEat :<br>
 [Webset](https://scaneats-website-421390099984.asia-southeast2.run.app/index.html)
@@ -234,11 +233,9 @@ Web ScanEat :<br>
 ## Languages and Tools:
 <p align="left"> <a href="https://developer.android.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="android" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a>  <a href="https://cloud.google.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="gcp" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://kotlinlang.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-icon.svg" alt="kotlin" width="40" height="40"/> </a> <a href="https://postman.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/> </a> <a href="https://fastapi.tiangolo.com" target="_blank" rel="noreferrer"> <img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" alt="fastapi" width="100" height="40"/> </a> <a href="https://hapi.dev" target="_blank" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/3774533?s=200&v=4" alt="hapijs" width="40" height="40"/> </a> </p>
 
-###
 
-🔥 Supported By
+# 🔥 Supported By
 
-###
 
 <div align="center">
   <img src="https://i.postimg.cc/Th8NFNLc/Kampus-Merdeka-MASTER.png" height="80" alt="kampus merdeka" style="margin-right: width:100px;"/>
