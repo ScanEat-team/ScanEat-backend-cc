@@ -158,7 +158,6 @@ const getMakananById = async (request, h) => {
 };
 
 
-
 // Fungsi untuk menambahkan data makanan ke Firestore
 const addMakanan = async (request, h) => {
     try {
@@ -173,14 +172,15 @@ const addMakanan = async (request, h) => {
             nama,            // Nama makanan
             deskripsi,       // Deskripsi makanan
             makanan_picture, // Gambar makanan
-            nutrition        // Objek nutrition (contoh: { kalori: 100, protein: 5, ... })
+            nutrition,       // Objek nutrition (contoh: { kalori: 100, protein: 5, ... })
+            upc              // UPC (Universal Product Code) untuk makanan
         } = request.payload;
 
         // Validasi input
-        if (!kategori || !nama || !deskripsi || !nutrition) {
+        if (!kategori || !nama || !deskripsi || !nutrition || !upc) {
             return h.response({
                 status: "fail",
-                message: "All fields (kategori, nama, deskripsi, nutrition) are required.",
+                message: "All fields (kategori, nama, deskripsi, nutrition, upc) are required.",
             }).code(400); // Bad Request
         }
 
@@ -220,6 +220,7 @@ const addMakanan = async (request, h) => {
             deskripsi: deskripsi,
             nutrition: nutritionData,
             makanan_picture: pictureUrl || null,
+            upc: upc, // Tambahkan atribut upc
         });
 
         return h.response({
@@ -239,6 +240,7 @@ const addMakanan = async (request, h) => {
         }).code(500); // Internal Server Error
     }
 };
+
 
 
 

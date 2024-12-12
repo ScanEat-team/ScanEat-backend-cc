@@ -28,7 +28,7 @@ const init = async () => {
     host: "0.0.0.0",
     routes: {
       cors: {
-        origin: ['*'],
+        origin: ['*'], // Mengizinkan semua origin. Ganti '*' dengan domain tertentu jika diperlukan.
         additionalHeaders: ['X-API-Key'],
       }
     }

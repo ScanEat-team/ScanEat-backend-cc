@@ -14,7 +14,10 @@ const register = async (request, h) => {
   try {
     // ⚙️ Ambil Request Payload
     const apiKey = request.headers["x-api-key"];
-    const { name, email, password, sex, birthdate, weight, height, dietPreference } = request.payload;
+    const { 
+      name, email, password, sex, birthdate, weight, height, 
+      dietPreference, domicile, phone 
+    } = request.payload;
 
     // 🔑 API KEY Check
     if (apiKey !== api_key) {
@@ -27,11 +30,11 @@ const register = async (request, h) => {
     }
 
     // ⚙️ Validasi input wajib
-    if (!name || !email || !password || !birthdate || !weight || !height) {
+    if (!name || !email || !password || !birthdate || !weight || !height || !domicile || !phone) {
       return h
         .response({
           status: "fail",
-          message: "Missing required fields (name, email, password, birthdate, weight, height)",
+          message: "Missing required fields (name, email, password, birthdate, weight, height, domicile, phone)",
         })
         .code(400);
     }
@@ -74,6 +77,8 @@ const register = async (request, h) => {
       height,
       bmi,
       dietPreference: dietPreference || "Not Specified", // Default jika tidak ada input
+      domicile,
+      phone,
     });
 
     // 📥 Response
@@ -92,6 +97,8 @@ const register = async (request, h) => {
         height,
         bmi,
         dietPreference: dietPreference || "Not Specified",
+        domicile,
+        phone,
       },
     }).code(201);
 
@@ -113,6 +120,7 @@ const register = async (request, h) => {
     return h.response(response).code(400);
   }
 };
+
 
 
 // 📫 POST /login
@@ -169,7 +177,7 @@ const login = async (request, h) => {
       }).code(401);
     }
 
-    // ⚙️ Format Respons dengan Semua Data User
+    // ⚙️ Format Respons dengan Semua Data User Termasuk Atribut Baru
     const responseData = {
       error: false,
       message: "Login Success",
@@ -185,6 +193,8 @@ const login = async (request, h) => {
         height: userData.height || null,
         bmi: userData.bmi || null,
         dietPreference: userData.dietPreference || null,
+        domicile: userData.domicile || null,
+        phone: userData.phone || null,
       },
     };
 
@@ -199,6 +209,7 @@ const login = async (request, h) => {
     }).code(500);
   }
 };
+
 
 
 // 📫 POST /forgotPassword
@@ -262,10 +273,11 @@ const forgotPassword = async (request, h) => {
 
 
 // editUsers - Edit Data Users
+// editUsers - Edit Data Users
 const editUsers = async (request, h) => {
   const key = request.headers["x-api-key"];
 
-  // Jika Kunci API Salah
+  // Validasi API Key
   if (key !== api_key) {
     return h.response({
       status: "unauthorized",
@@ -275,7 +287,17 @@ const editUsers = async (request, h) => {
 
   try {
     // Ambil data dari request payload
-    const { userId, name, sex, birthdate, weight, height, dietPreference } = request.payload;
+    const {
+      userId,
+      name,
+      sex,
+      birthdate,
+      weight,
+      height,
+      dietPreference,
+      domicile,
+      phone
+    } = request.payload;
 
     // Validasi userId
     if (!userId || typeof userId !== "string") {
@@ -298,28 +320,50 @@ const editUsers = async (request, h) => {
       }).code(404);
     }
 
+    // Ambil data pengguna saat ini
+    const userData = userSnapshot.data();
+
     // Siapkan data untuk diperbarui
     const updateData = {};
 
-    if (name) updateData.name = name;
-    if (sex) updateData.sex = sex;
+    // Validasi dan set nilai-nilai baru
+    if (name && typeof name === "string") updateData.name = name;
+    if (sex && typeof sex === "string") updateData.sex = sex;
     if (birthdate) {
       const birthDateObject = new Date(birthdate);
+      if (isNaN(birthDateObject.getTime())) {
+        return h.response({
+          status: "bad request",
+          message: "Invalid birthdate format.",
+        }).code(400);
+      }
       const currentDate = new Date();
       const age = currentDate.getFullYear() - birthDateObject.getFullYear();
       updateData.birthdate = birthdate;
       updateData.age = age;
+    } else if (userData.birthdate) {
+      // Hitung ulang age jika birthdate tidak diperbarui tetapi sudah ada
+      const birthDateObject = new Date(userData.birthdate);
+      const currentDate = new Date();
+      updateData.age = currentDate.getFullYear() - birthDateObject.getFullYear();
     }
-    if (weight) updateData.weight = weight;
-    if (height) {
+
+    if (weight && typeof weight === "number" && weight > 0) updateData.weight = weight;
+    if (height && typeof height === "number" && height > 0) {
       updateData.height = height;
-      if (weight) {
-        // Perbarui BMI jika height dan weight tersedia
-        const heightInMeters = height / 100;
-        updateData.bmi = weight / (heightInMeters ** 2);
-      }
     }
-    if (dietPreference) updateData.dietPreference = dietPreference;
+
+    // Hitung ulang BMI secara otomatis
+    const finalWeight = updateData.weight || userData.weight;
+    const finalHeight = updateData.height || userData.height;
+    if (finalWeight && finalHeight) {
+      const heightInMeters = finalHeight / 100;
+      updateData.bmi = finalWeight / (heightInMeters ** 2);
+    }
+
+    if (dietPreference && typeof dietPreference === "string") updateData.dietPreference = dietPreference;
+    if (domicile && typeof domicile === "string") updateData.domicile = domicile;
+    if (phone && typeof phone === "string") updateData.phone = phone;
 
     // Update Firestore dengan data yang diperbarui
     await userRef.update(updateData);
@@ -332,12 +376,18 @@ const editUsers = async (request, h) => {
   } catch (error) {
     console.error("Error editing user:", error);
 
+    let errorMessage = "Failed to update user data.";
+    if (error.code === "permission-denied") {
+      errorMessage = "Insufficient permissions to update user data.";
+    }
+
     return h.response({
       status: "error",
-      message: "Failed to update user data",
+      message: errorMessage,
     }).code(500);
   }
 };
+
 
 
 // users - Hapus Data Users Tertentu

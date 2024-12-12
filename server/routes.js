@@ -27,7 +27,7 @@ const {getAllMakanan, getMakanan, getMakananById, addMakanan,updateMakanan, dele
 
 // 📚 Handler Predict
 // -------------------
-// const { getPrediction, predict } = require("./handler/predict");
+const { getPrediction, predict } = require("./handler/predict");
 // const { predictAndSaveHistory, getHistoryHandler, deleteHistoryHandler } = require("./handler/predichisto");
 
 
@@ -283,7 +283,6 @@ const routes = [
     handler: deleteAll,
     // 👉 ""
   },
-];
 
   // ---------------------
   // 🌐 Handler Predict
@@ -292,19 +291,19 @@ const routes = [
 
   // POST /predict
   // Membuat Prediksi
-//   {
-//     method: "POST",
-//     path: "/predict",
-//     handler: predict, // Menggunakan handler yang diperbarui
-//     options: {
-//         payload: {
-//             maxBytes: 10485760, // Batas ukuran file: 10 MB
-//             multipart: true, // Mendukung multipart/form-data
-//             output: "stream", // Mendukung streaming file
-//             parse: true, // Parsing otomatis untuk multipart payload
-//         },
-//     },
-// },
+  {
+    method: "POST",
+    path: "/predict",
+    handler: predict, // Menggunakan handler yang diperbarui
+    options: {
+        payload: {
+            maxBytes: 10485760, // Batas ukuran file: 10 MB
+            multipart: true, // Mendukung multipart/form-data
+            output: "stream", // Mendukung streaming file
+            parse: true, // Parsing otomatis untuk multipart payload
+        },
+    },
+},
 // {
 //   method: "POST",
 //   path: "/predicthisto",
@@ -330,4 +329,6 @@ const routes = [
 // },
 // 📫 Export Routes ke Index
 // -------------------------
+];
+
 module.exports = routes;
