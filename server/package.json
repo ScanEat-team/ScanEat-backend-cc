@@ -1,14 +1,14 @@
 {
-  "name": "parental_peace",
+  "name": "scaneat",
   "version": "1.0.0",
-  "description": "Parental Peace adalah aplikasi mobile yang dirancang khusus untuk mendukung orangtua baru dalam perawatan bayi mereka. Aplikasi ini menyediakan berbagai fitur yang memungkinkan pengguna untuk merespons kebutuhan bayi dengan lebih baik, meningkatkan koneksi emosional antara orangtua dan bayi, dan memberikan sumber daya informatif tentang perawatan bayi.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "bun run index.js",
     "start-dev": "nodemon index.js"
   },
-  "author": "parental_peace",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "@google-cloud/storage": "^7.14.0",
