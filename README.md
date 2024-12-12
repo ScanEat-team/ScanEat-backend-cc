@@ -15,11 +15,9 @@ ScanEat is a web-based app designed to help consumers make the best nutritional 
     - [Steps](#steps)
   - [Environment Configuration](#environment-configuration)
     - [Add Firebase and Firestore Keys](#add-firebase-and-firestore-keys)
-      - [1. Firebase Configuration](#1-firebase-configuration)
       - [Add Role a Service Account](#add-role-a-service-account)
     - [Create a Private Configuration File](#create-a-private-configuration-file)
       - [File Structure](#file-structure)
-  - [This setup will securely manage the service account keys for both Google Cloud and Firebase.](#this-setup-will-securely-manage-the-service-account-keys-for-both-google-cloud-and-firebase)
   - [Deploying to Cloud Run](#deploying-to-cloud-run)
   - [Prediction Classes](#prediction-classes)
 - [API Reference (Still Only Reference)](#api-reference-still-only-reference)
@@ -67,7 +65,7 @@ npm install
 
 ## Environment Configuration
 ### Add Firebase and Firestore Keys
-#### 1. Firebase Configuration
+1. Firebase Configuration
 - Go to **Firebase Console** and navigate to your project.
 - Open **Project Settings** > **Service Accounts**.
 - Generate a new private key by clicking **Generate New Private Key**.
@@ -98,6 +96,7 @@ Ensure the following two files are stored in the `private` folder:
 
 
 This setup will securely manage the service account keys for both Google Cloud and Firebase.
+
 ---
 ## Deploying to Cloud Run
 - ### Preconditions
